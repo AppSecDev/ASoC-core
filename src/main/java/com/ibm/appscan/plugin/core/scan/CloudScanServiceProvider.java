@@ -138,7 +138,7 @@ public class CloudScanServiceProvider implements IScanServiceProvider, CoreConst
 	private boolean verifyApplication(String appId) {
 		if(appId != null && !appId.trim().equals("")) { //$NON-NLS-1$
 			IApplicationProvider provider = new CloudApplicationProvider(m_authProvider);
-			if(provider.getApplications().keySet().contains(appId))
+			if(provider.getApplications() != null && provider.getApplications().keySet().contains(appId))
 				return true;
 		}
 		m_progress.setStatus(new Message(Message.ERROR, Messages.getMessage(ERROR_INVALID_APP, appId)));
