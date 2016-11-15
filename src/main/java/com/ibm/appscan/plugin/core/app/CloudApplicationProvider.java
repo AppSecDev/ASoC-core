@@ -69,7 +69,7 @@ public class CloudApplicationProvider implements IApplicationProvider, CoreConst
 			}
 		}
 		catch(IOException | JSONException e) {
-			//Log message setStatus(new Message(Message.ERROR, ERROR_LOADING_APPS), e);
+			m_applications = null;
 		}
 	}
 }
