@@ -23,6 +23,8 @@ public interface CoreConstants {
 	String VERSION_NUMBER			= "VersionNumber";					//$NON-NLS-1$
 
 	String BINDING_ID				= "Bindingid";						//$NON-NLS-1$
+		String KEY_ID				= "KeyId";							//$NON-NLS-1$
+	String KEY_SECRET				= "KeySecret";						//$NON-NLS-1$
 	String PASSWORD					= "Password";						//$NON-NLS-1$
 	String TOKEN					= "Token";							//$NON-NLS-1$
 	String USERNAME					= "Username";						//$NON-NLS-1$
@@ -38,6 +40,7 @@ public interface CoreConstants {
 	String API_BLUEMIX				= "Bluemix";						//$NON-NLS-1$
 	String API_BLUEMIX_LOGIN 		= API_ENV + "/Account/BluemixLogin";//$NON-NLS-1$
 	String API_IBM_LOGIN 			= API_ENV + "/Account/IBMIdLogin";	//$NON-NLS-1$
+	String API_KEY_LOGIN			= API_ENV + "Account/ApiKeyLogin";	//$NON-NLS-1$
 	String API_LOGOUT				= API_ENV + "/Account/Logout";		//$NON-NLS-1$
 	String API_APPS					= API_ENV + "/Apps"; 				//$NON-NLS-1$
 	String API_BASIC_DETAILS		= API_ENV + "/Scans/%s";			//$NON-NLS-1$
@@ -50,6 +53,7 @@ public interface CoreConstants {
 	String API_SCX					= "SCX";							//$NON-NLS-1$
 	String API_SACLIENT_DOWNLOAD	= "/api/%s/StaticAnalyzer/SAClientUtil?os=%s"; 	//$NON-NLS-1$
 	String API_SACLIENT_VERSION		= "/api/%s/StaticAnalyzer/SAClientUtil?os=%s&meta=%s"; 	//$NON-NLS-1$
+	String API_KEY_PATH				= "/api/ideclientuilogin";			//$NON-NLS-1$
 	
 	String DEFAULT_RESULT_NAME		= "asoc_results";					//$NON-NLS-1$
 	String SACLIENT_INSTALL_DIR		= "SAClientInstall";				//$NON-NLS-1$
