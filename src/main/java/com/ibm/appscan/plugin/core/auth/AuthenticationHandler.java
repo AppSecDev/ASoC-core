@@ -27,7 +27,7 @@ public class AuthenticationHandler implements CoreConstants {
 	}
 	
 	/**
-	 * Authenticates a user with the service.
+	 * Authenticates a user with the IBM Application Security on Cloud service using a username and password.
 	 * @param username
 	 * @param password
 	 * @param persist True to persist the credentials.
@@ -36,18 +36,44 @@ public class AuthenticationHandler implements CoreConstants {
 	 * @throws JSONException 
 	 */
 	public boolean login(String username, String password, boolean persist) throws IOException, JSONException {
-				
+		return login(username, password, persist, LoginType.ASoC);
+	}
+
+	/**
+	 * Authenticates a user using the given LoginType.
+	 * @param id The key id.
+	 * @param secret The key secret.
+	 * @param persist True to persist the credentials.
+	 * @param type The LoginType.
+	 * @return True if successful.
+	 * @throws IOException 
+	 * @throws JSONException 
+	 */
+	public boolean login(String username, String password, boolean persist, LoginType type) throws IOException, JSONException {
+		
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put(CONTENT_TYPE, "application/x-www-form-urlencoded"); //$NON-NLS-1$
 		headers.put(CHARSET, UTF8);
 		
 		Map<String, String> params = new HashMap<String, String>();
-		params.put(USERNAME, username);
-	    params.put(PASSWORD, password);
-	    
-		String url = m_authProvider.getServer() + API_IBM_LOGIN;
-
+		String url;
 		
+		if(type == LoginType.Bluemix) {
+			params.put(BINDING_ID, username);
+			params.put(PASSWORD, password);
+		    url = m_authProvider.getServer() + API_BLUEMIX_LOGIN;			
+		}
+		else if(type == LoginType.ASoC) {
+			params.put(USERNAME, username);
+			params.put(PASSWORD, password);
+		    url = m_authProvider.getServer() + API_IBM_LOGIN;
+		}
+		else { //Federated login
+			params.put(KEY_ID, username);
+			params.put(KEY_SECRET, password);
+		    url = m_authProvider.getServer() + API_KEY_LOGIN;
+		}
+
 		HttpClient client = new HttpClient();
 	    HttpResponse response = client.postForm(url, headers, params);
 	    
