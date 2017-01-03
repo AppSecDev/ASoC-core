@@ -26,7 +26,6 @@ import com.ibm.appscan.plugin.core.http.HttpPart;
 import com.ibm.appscan.plugin.core.http.HttpResponse;
 import com.ibm.appscan.plugin.core.logging.IProgress;
 import com.ibm.appscan.plugin.core.logging.Message;
-import com.ibm.appscan.plugin.core.utils.SystemUtil;
 
 public class CloudScanServiceProvider implements IScanServiceProvider, CoreConstants {
 
@@ -47,9 +46,6 @@ public class CloudScanServiceProvider implements IScanServiceProvider, CoreConst
 		
 		String request_url =  m_authProvider.getServer() + String.format(API_SCANNER, type);
 		Map<String, String> request_headers = m_authProvider.getAuthorizationHeader(true);
-		
-		params.put(LOCALE, SystemUtil.getLocale());
-		params.put(EMAIL_NOTIFICATION, Boolean.toString(false));
 		
 		HttpClient client = new HttpClient();
 		
