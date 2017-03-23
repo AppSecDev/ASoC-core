@@ -22,6 +22,10 @@ public interface CoreConstants {
 	String TARGET					= "target";						//$NON-NLS-1$
 	String VERSION_NUMBER				= "VersionNumber";					//$NON-NLS-1$
 
+
+	String RUN_ANALYSIS				= "Run Analysis";					//$NON-NLS-1$
+	String GENERATE_IRX				= "Generate IRX";					//$NON-NLS-1$
+
 	String BINDING_ID				= "Bindingid";						//$NON-NLS-1$
 		String KEY_ID				= "KeyId";						//$NON-NLS-1$
 	String KEY_SECRET				= "KeySecret";						//$NON-NLS-1$
