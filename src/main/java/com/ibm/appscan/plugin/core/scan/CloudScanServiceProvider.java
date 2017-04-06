@@ -1,5 +1,6 @@
 /**
  * © Copyright IBM Corporation 2016.
+ * © Copyright HCL Technologies Ltd. 2017.
  * LICENSE: Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -7,6 +8,7 @@ package com.ibm.appscan.plugin.core.scan;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +29,9 @@ import com.ibm.appscan.plugin.core.http.HttpResponse;
 import com.ibm.appscan.plugin.core.logging.IProgress;
 import com.ibm.appscan.plugin.core.logging.Message;
 
-public class CloudScanServiceProvider implements IScanServiceProvider, CoreConstants {
+public class CloudScanServiceProvider implements IScanServiceProvider, Serializable, CoreConstants {
+
+	private static final long serialVersionUID = 1L;
 
 	private IProgress m_progress;
 	private IAuthenticationProvider m_authProvider;

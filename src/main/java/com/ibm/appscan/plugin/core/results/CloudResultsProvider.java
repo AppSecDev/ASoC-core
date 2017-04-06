@@ -1,5 +1,6 @@
 /**
  * © Copyright IBM Corporation 2016.
+ * © Copyright HCL Technologies Ltd. 2017.
  * LICENSE: Apache License, Version 2.0 https://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -7,6 +8,7 @@ package com.ibm.appscan.plugin.core.results;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Map;
 
@@ -25,7 +27,9 @@ import com.ibm.appscan.plugin.core.logging.Message;
 import com.ibm.appscan.plugin.core.scan.IScanServiceProvider;
 import com.ibm.appscan.plugin.core.utils.SystemUtil;
 
-public class CloudResultsProvider implements IResultsProvider, CoreConstants {
+public class CloudResultsProvider implements IResultsProvider, Serializable, CoreConstants {
+
+	private static final long serialVersionUID = 1L;
 
 	private static String DEFAULT_REPORT_FORMAT = "html"; //$NON-NLS-1$
 	
