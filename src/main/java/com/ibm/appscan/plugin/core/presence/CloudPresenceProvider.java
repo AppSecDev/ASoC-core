@@ -145,7 +145,7 @@ public class CloudPresenceProvider implements IPresenceProvider, CoreConstants {
 				for(int i = 0; i < array.length(); i++) {
 					JSONObject object = array.getJSONObject(i);
 					String id = object.getString(ID);
-					String name = object.getString(NAME);
+					String name = object.getString(PRESENCE_NAME);
 					m_presences.put(id, name);
 				}
 			}
