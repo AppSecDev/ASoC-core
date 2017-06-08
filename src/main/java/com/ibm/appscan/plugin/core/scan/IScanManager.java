@@ -31,7 +31,7 @@ public interface IScanManager {
 	void analyze(IProgress progress, Map<String, String> properties, IScanServiceProvider provider) throws AppScanException;
 	
 	/**
-	 * Adds a target to the scan.
+	 * Adds an item to be scanned.
 	 * @param target
 	 */
 	void addScanTarget(ITarget target);	

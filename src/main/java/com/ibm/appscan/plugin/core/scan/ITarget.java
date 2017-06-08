@@ -1,10 +1,9 @@
 package com.ibm.appscan.plugin.core.scan;
 
+/**
+ * Represents an item to be scanned. Depending upon the type of scan, this may be a url or a file.
+ */
 public interface ITarget {
 
-	/**
-	 * Retrieves the target of a scan as a String. Depending upon the type of scanner, this may be a url or a file.
-	 * @return
-	 */
 	String getTarget();
 }
